@@ -1,5 +1,6 @@
 import React from 'react';
 import 'normalize.css';
+import 'flexboxgrid'; // eslint-disable-line import/extensions
 import styled from 'styled-components';
 
 const MailContainer = styled.div`
