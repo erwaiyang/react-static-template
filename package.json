@@ -1,0 +1,24 @@
+{
+  "name": "template",
+  "version": "0.1.0",
+  "description": "- React 15.6+ - Styled-Components - Webpack 3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "webpack",
+    "webpack3",
+    "styled-components",
+    "react"
+  ],
+  "author": "Jean Yang",
+  "license": "MIT",
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "15.6.1",
+    "react-dom": "15.6.1",
+    "styled-components": "^2.1.0",
+    "webpack": "3"
+  }
+}
