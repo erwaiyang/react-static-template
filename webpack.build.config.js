@@ -7,7 +7,7 @@ const baseConfig = require('./webpack.base.config');
 const config = R.merge(baseConfig, {
   entry: {
     app: [
-      './src/build.js',
+      './src/static.js',
     ],
   },
   devtool: 'cheap-module-source-map',
@@ -17,7 +17,6 @@ const config = R.merge(baseConfig, {
         NODE_ENV: JSON.stringify('production'),
       },
     }),
-    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.UglifyJsPlugin({
       sourceMap: false,
       compress: {
