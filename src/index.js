@@ -1,16 +1,15 @@
+import { AppContainer } from 'react-hot-loader';
 import React from 'react';
-import styled from 'styled-components';
+import ReactDOM from 'react-dom';
+import Mail from './Mail';
 
-const MailContainer = styled`
-  width: 100%;
-`;
+const rootEl = document.getElementById('root');
+const render = Comp =>
+  ReactDOM.render(
+    <AppContainer>
+      <Comp />
+    </AppContainer>,
+    rootEl);
 
-function Mail() {
-  return (
-    <MailContainer>
-      <h1>Title</h1>
-    </MailContainer>
-  );
-}
-
-export default Mail;
+render(Mail);
+if (module.hot) module.hot.accept('./Mail', () => render(Mail));
