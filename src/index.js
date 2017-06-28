@@ -1,15 +1,18 @@
-import { AppContainer } from 'react-hot-loader';
 import React from 'react';
-import ReactDOM from 'react-dom';
-import Mail from './Mail';
+import 'normalize.css';
+import 'flexboxgrid'; // eslint-disable-line import/extensions
+import styled from 'styled-components';
 
-const rootEl = document.getElementById('root');
-const render = Comp =>
-  ReactDOM.render(
-    <AppContainer>
-      <Comp />
-    </AppContainer>,
-    rootEl);
+const MailContainer = styled.div`
+  width: 100%;
+`;
 
-render(Mail);
-if (module.hot) module.hot.accept('./Mail', () => render(Mail));
+function Mail() {
+  return (
+    <MailContainer>
+      <h1>Title</h1>
+    </MailContainer>
+  );
+}
+
+export default Mail;

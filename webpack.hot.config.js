@@ -10,7 +10,7 @@ module.exports = {
       'react-hot-loader/patch',
       `webpack-dev-server/client?http://localhost:${PORT}`,
       'webpack/hot/only-dev-server',
-      './src/index.js',
+      './src/hot.js',
     ],
   },
   output: baseConfig.output,
