@@ -1,13 +1,11 @@
 /* eslint-disable  import/no-extraneous-dependencies */
 const webpack = require('webpack');
+const R = require('ramda');
 const nodeExternals = require('webpack-node-externals');
 const baseConfig = require('./webpack.base.config');
 
-const config = {
-  output: baseConfig.output,
-  module: baseConfig.module,
+const config = R.merge(baseConfig, {
   entry: {
-    vendor: baseConfig.entry.vendor,
     app: [
       './src/build.js',
     ],
@@ -31,9 +29,9 @@ const config = {
       },
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
-  ].concat(baseConfig.plugins),
+  ],
   target: 'node',
   externals: nodeExternals(),
-};
+});
 
 module.exports = config;
