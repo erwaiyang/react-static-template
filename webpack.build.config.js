@@ -4,6 +4,7 @@ const R = require('ramda');
 const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.base.config');
+const externalCss = require('./config/externalCss');
 
 const config = R.merge(baseConfig, {
   module: {
@@ -51,7 +52,7 @@ const config = R.merge(baseConfig, {
   ],
   target: 'node',
   externals: nodeExternals({
-    whitelist: ['normalize.css', 'flexboxgrid'],
+    whitelist: externalCss,
   }),
 });
 

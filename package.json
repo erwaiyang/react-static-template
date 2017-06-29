@@ -1,7 +1,7 @@
 {
   "name": "template",
   "version": "0.1.0",
-  "description": "- React 15.6+ - Styled-Components - Webpack 3",
+  "description": "- React 15.6+ - CSS Module - Webpack 3",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config webpack.hot.config.js",
@@ -13,7 +13,7 @@
   "keywords": [
     "webpack",
     "webpack3",
-    "styled-components",
+    "css-module",
     "react"
   ],
   "author": "Jean Yang",

@@ -1,4 +1,4 @@
 # Tech Included
 - React 15.6+
-- Styled-Components
+- CSS Module
 - Webpack 3

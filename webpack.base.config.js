@@ -5,7 +5,6 @@ const vendor = [
   'react',
   'react-dom',
   'prop-types',
-  'styled-components',
 ];
 
 const output = {
