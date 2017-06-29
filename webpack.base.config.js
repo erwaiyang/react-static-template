@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const values = require('postcss-modules-values');
 
 const vendor = [
   'react',
@@ -23,7 +24,11 @@ const rules = [
   },
   {
     test: /\.css$/,
-    use: ['style-loader', 'css-loader?modules&localIdentName=[local]---[hash:base64:5]'],
+    use: [
+      'style-loader',
+      'css-loader?modules&localIdentName=[local]---[hash:base64:5]',
+      'postcss-loader',
+    ],
   },
 ];
 
@@ -35,6 +40,10 @@ const plugins = [
   }),
 ];
 
+const postcss = [
+  values,
+];
+
 module.exports = {
   entry: {
     vendor,
@@ -44,4 +53,5 @@ module.exports = {
     rules,
   },
   plugins,
+  postcss,
 };
