@@ -3,6 +3,7 @@
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-mixed-operators": 0,
-    "no-nested-ternary": 0
+    "no-nested-ternary": 0,
+    "import/no-extraneous-dependencies": [2, {"devDependencies": true}]
   }
 }
