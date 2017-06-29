@@ -1,17 +1,13 @@
 import React from 'react';
 import 'normalize.css';
 import 'flexboxgrid'; // eslint-disable-line import/extensions
-import styled from 'styled-components';
-
-const MailContainer = styled.div`
-  width: 100%;
-`;
+import style from './index.css';
 
 function Mail() {
   return (
-    <MailContainer>
+    <div className={style.mail}>
       <h1>Title</h1>
-    </MailContainer>
+    </div>
   );
 }
 

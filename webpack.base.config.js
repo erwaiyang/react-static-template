@@ -24,7 +24,7 @@ const rules = [
   },
   {
     test: /\.css$/,
-    use: ['style-loader', 'css-loader'],
+    use: ['style-loader', 'css-loader?modules&localIdentName=[local]---[hash:base64:5]'],
   },
 ];
 

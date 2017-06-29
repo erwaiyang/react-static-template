@@ -19,7 +19,7 @@ const config = R.merge(baseConfig, {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader',
+          use: 'css-loader?modules&localIdentName=[local]---[hash:base64:5]',
         }),
       },
     ],
