@@ -4,6 +4,7 @@ const R = require('ramda');
 const nodeExternals = require('webpack-node-externals');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.base.config');
+const postcss = require('./config/postcss');
 const externalCss = require('./config/externalCss');
 
 const config = R.merge(baseConfig, {
@@ -20,7 +21,10 @@ const config = R.merge(baseConfig, {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: 'css-loader?modules&localIdentName=[local]---[hash:base64:5]',
+          use: [
+            { loader: 'css-loader', options: { modules: true, localIdentName: '[local]---[hash:base64:5]' } },
+            postcss,
+          ],
         }),
       },
     ],
