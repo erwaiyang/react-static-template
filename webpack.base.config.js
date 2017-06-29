@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const css = require('./config/css');
 const postcss = require('./config/postcss');
 
 const vendor = [
@@ -26,7 +27,7 @@ const rules = [
     test: /\.css$/,
     use: [
       'style-loader',
-      'css-loader?modules&localIdentName=[local]---[hash:base64:5]',
+      css,
       postcss,
     ],
   },
