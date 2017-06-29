@@ -6,7 +6,8 @@
   "scripts": {
     "start": "webpack-dev-server --config webpack.hot.config.js",
     "clean": "rimraf dist",
-    "build": "npm run clean && webpack --config webpack.build.config.js && node build.js",
+    "pack": "webpack --config webpack.build.config.js",
+    "build": "npm run clean && npm run pack && node build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -41,6 +42,7 @@
     "eslint-plugin-import": "^2.6.0",
     "eslint-plugin-jsx-a11y": "^5.1.0",
     "eslint-plugin-react": "^7.1.0",
+    "extract-text-webpack-plugin": "^2.1.2",
     "react-hot-loader": "3.0.0-beta.7",
     "rimraf": "^2.6.1",
     "style-loader": "^0.18.2",

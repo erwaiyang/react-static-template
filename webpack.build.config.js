@@ -2,9 +2,28 @@
 const webpack = require('webpack');
 const R = require('ramda');
 const nodeExternals = require('webpack-node-externals');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const baseConfig = require('./webpack.base.config');
 
 const config = R.merge(baseConfig, {
+  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+        use: [
+          'babel-loader',
+        ],
+        exclude: /node_modules/,
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader',
+        }),
+      },
+    ],
+  },
   entry: {
     app: [
       './src/static.js',
@@ -28,9 +47,12 @@ const config = R.merge(baseConfig, {
       },
     }),
     new webpack.optimize.AggressiveMergingPlugin(),
+    new ExtractTextPlugin('styles.css'),
   ],
   target: 'node',
-  externals: nodeExternals(),
+  externals: nodeExternals({
+    whitelist: ['normalize.css', 'flexboxgrid'],
+  }),
 });
 
 module.exports = config;
