@@ -1,6 +1,5 @@
 import React from 'react';
 import 'normalize.css';
-import 'flexboxgrid'; // eslint-disable-line import/extensions
 import style from './index.css';
 
 function Mail() {
